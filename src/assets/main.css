@@ -14,7 +14,8 @@
 }
 
 html {
-  font-size: 16px; /* 作為 rem 的基礎 */
+  font-size: 16px;
+  /* ✨ 新增：實現平滑滾動效果 ✨ */
   scroll-behavior: smooth;
 }
 
@@ -45,23 +46,3 @@ a:hover {
   color: #33bbff;
 }
 
-/* 演示用組件的樣式 */
-.section-placeholder {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh; /* 給予足夠高度以突顯區塊 */
-  border-radius: 8px;
-  padding: 2rem;
-  text-align: center;
-  color: #fff;
-}
-.section-placeholder h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-.section-placeholder p {
-  font-size: 1.2rem;
-  color: #eee;
-}
