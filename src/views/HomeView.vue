@@ -34,11 +34,11 @@
 
 <script setup>
 // 引入所有的區塊組件
-import HeroSection from '@/components/HeroSection.vue';
-import AboutSection from '@/components/AboutSection.vue';
-import PortfolioSection from '@/components/PortfolioSection.vue';
-import SkillsSection from '@/components/SkillsSection.vue';
-import ContactSection from '@/components/ContactSection.vue';
+import HeroSection from '@/components/HeroSection.vue'
+import AboutSection from '@/components/AboutSection.vue'
+import PortfolioSection from '@/components/PortfolioSection.vue'
+import SkillsSection from '@/components/SkillsSection.vue'
+import ContactSection from '@/components/ContactSection.vue'
 
 // 這個組件現在是我們單頁網站的主體，
 // 它負責組合導覽列、所有內容區塊以及頁腳。
@@ -100,7 +100,7 @@ import ContactSection from '@/components/ContactSection.vue';
 }
 
 .content-area {
-  flex-grow: 1; 
+  flex-grow: 1;
   /* 注意：這裡不再需要 padding，讓每個 section 自己控制內邊距 */
 }
 
