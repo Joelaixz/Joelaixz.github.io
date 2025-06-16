@@ -65,6 +65,7 @@ const skillCategories = ref([
 .skills-section {
   /* 與 About 區塊同色，維持視覺連續性 */
   background-color: #252a33;
+    padding-top: 130px!important;
 }
 
 h2, h4 {
