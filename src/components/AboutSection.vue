@@ -6,7 +6,7 @@
           <img src="https://via.placeholder.com/400x400?text=Your+Photo" alt="A professional photo of the developer">
         </div>
         <div class="about-text">
-          <h2>Hello, I'm [Your Name]</h2>
+          <h2>Hello, I'm Joel</h2>
           <p>
             我是一位充滿熱情的前端工程師，專注於打造流暢、美觀且高效能的使用者介面。我熱衷於將複雜的問題轉化為直觀、易用的數位體驗。
           </p>

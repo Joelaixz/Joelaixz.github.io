@@ -11,13 +11,12 @@ const router = createRouter({
       name: 'home',
       // 直接載入包含了所有區塊的 HomeView 組件
       component: HomeView
+    },
+    {
+      path: '/resume',
+      name: 'resume',
+      component: () => import('../views/ResumeView.vue')
     }
-    // 未來如果你有其他獨立頁面，例如部落格，可以加在這裡
-    // {
-    //   path: '/blog',
-    //   name: 'blog',
-    //   component: () => import('../views/BlogView.vue')
-    // }
   ]
 });
 

@@ -1,3 +1,4 @@
+import './assets/base.css'
 import './assets/main.css'
 
 // 引入 Bootstrap 的 CSS 樣式

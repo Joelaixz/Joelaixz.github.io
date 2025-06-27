@@ -1,21 +1,21 @@
 <template>
-  <Header />
+  <AppHeader />
   <main>
     <HeroSection />
     <AboutSection />
     <SkillsSection />
     <ContactSection />
   </main>
-  <Footer />
+  <AppFooter />
 </template>
 
 <script setup>
-import Header from '@/components/Header.vue';
+import AppHeader from '@/components/AppHeader.vue';
 import HeroSection from '@/components/HeroSection.vue';
 import AboutSection from '@/components/AboutSection.vue';
 import SkillsSection from '@/components/SkillsSection.vue';
 import ContactSection from '@/components/ContactSection.vue';
-import Footer from '@/components/Footer.vue';
+import AppFooter from '@/components/AppFooter.vue';
 </script>
 
 <style scoped>

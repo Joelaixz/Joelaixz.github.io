@@ -1,7 +1,7 @@
 <template>
   <header class="sticky-header">
     <div class="logo">
-      <a href="/">J.L.</a>
+      <router-link to="/">Joel</router-link>
     </div>
     <nav class="nav-links">
       <a href="#about">關於我</a>
@@ -14,12 +14,14 @@
         <button @click="switchTheme('dark')" title="Dark Mode">🌙</button>
         <button @click="switchTheme('cyberpunk')" title="Cyberpunk Mode">🤖</button>
       </div>
-      <a href="/resume.pdf" class="resume-cta" download>下載履歷</a>
+      <router-link to="/resume" class="resume-cta">查看履歷</router-link>
     </div>
   </header>
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router';
+
 function switchTheme(themeName) {
   document.documentElement.setAttribute('data-theme', themeName);
 }

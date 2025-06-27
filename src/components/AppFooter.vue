@@ -1,13 +1,16 @@
 <template>
   <footer class="site-footer">
     <div class="container">
-      <p>© 2025 [Your Name]. All Rights Reserved.</p>
+      <p>&copy; {{ currentYear }} Joel. All Rights Reserved.</p>
       <p class="made-with">以 ❤️ 與 Vite + Vue.js 打造</p>
     </div>
   </footer>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+const currentYear = ref(new Date().getFullYear());
 </script>
 
 <style scoped>
