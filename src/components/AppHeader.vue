@@ -10,9 +10,9 @@
     </nav>
     <div class="controls">
       <button @click="toggleTheme" class="theme-toggle-button" :class="currentTheme">
-        <span v-if="currentTheme === 'light'">☀️ Light</span>
-        <span v-else-if="currentTheme === 'dark'">🌙 Dark</span>
+        <span v-if="currentTheme === 'dark'">🌙 Dark</span>
         <span v-else-if="currentTheme === 'cyberpunk'">🤖 Cyber</span>
+        <span v-else-if="currentTheme === 'light'">☀️ Light</span>
       </button>
       <router-link to="/resume" class="resume-cta">查看履歷</router-link>
     </div>
@@ -23,8 +23,8 @@
 import { ref, onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 
-const themes = ['light', 'dark', 'cyberpunk'];
-const currentTheme = ref('light');
+const themes = ['dark', 'cyberpunk', 'light'];
+const currentTheme = ref('dark');
 
 const toggleTheme = () => {
   const currentIndex = themes.indexOf(currentTheme.value);
@@ -41,9 +41,9 @@ onMounted(() => {
     currentTheme.value = savedTheme;
     document.documentElement.setAttribute('data-theme', savedTheme);
   } else {
-    // Default to light if no theme saved or invalid
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
+    // Default to dark if no theme saved or invalid
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
   }
 });
 </script>
