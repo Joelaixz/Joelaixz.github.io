@@ -4,27 +4,48 @@
       <router-link to="/">Joel</router-link>
     </div>
     <nav class="nav-links">
-      <a href="#about">關於我</a>
-      <a href="#skills">技能</a>
-      <a href="#contact">聯絡我</a>
+      <router-link to="/#about">關於我</router-link>
+      <router-link to="/#skills">技能</router-link>
+      <router-link to="/#contact">聯絡我</router-link>
     </nav>
     <div class="controls">
-      <div class="theme-switcher">
-        <button @click="switchTheme('light')" title="Light Mode">☀️</button>
-        <button @click="switchTheme('dark')" title="Dark Mode">🌙</button>
-        <button @click="switchTheme('cyberpunk')" title="Cyberpunk Mode">🤖</button>
-      </div>
+      <button @click="toggleTheme" class="theme-toggle-button" :class="currentTheme">
+        <span v-if="currentTheme === 'light'">☀️ Light</span>
+        <span v-else-if="currentTheme === 'dark'">🌙 Dark</span>
+        <span v-else-if="currentTheme === 'cyberpunk'">🤖 Cyber</span>
+      </button>
       <router-link to="/resume" class="resume-cta">查看履歷</router-link>
     </div>
   </header>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 
-function switchTheme(themeName) {
-  document.documentElement.setAttribute('data-theme', themeName);
-}
+const themes = ['light', 'dark', 'cyberpunk'];
+const currentTheme = ref('light');
+
+const toggleTheme = () => {
+  const currentIndex = themes.indexOf(currentTheme.value);
+  const nextIndex = (currentIndex + 1) % themes.length;
+  const nextTheme = themes[nextIndex];
+  document.documentElement.setAttribute('data-theme', nextTheme);
+  localStorage.setItem('theme', nextTheme);
+  currentTheme.value = nextTheme;
+};
+
+onMounted(() => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme && themes.includes(savedTheme)) {
+    currentTheme.value = savedTheme;
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  } else {
+    // Default to light if no theme saved or invalid
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  }
+});
 </script>
 
 <style scoped>
@@ -67,12 +88,38 @@ function switchTheme(themeName) {
   gap: 1.5rem;
 }
 
-.theme-switcher button {
-  background: none;
+.theme-toggle-button {
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
   border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 1.2rem;
-  padding: 0.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle-button:hover {
+  opacity: 0.9;
+}
+
+.theme-toggle-button.light {
+  background-color: #FFD700; /* Gold */
+  color: #333;
+}
+
+.theme-toggle-button.dark {
+  background-color: #6A0DAD; /* Dark Purple */
+  color: #FFF;
+}
+
+.theme-toggle-button.cyberpunk {
+  background-color: #00F0FF; /* Bright Cyan */
+  color: #0A043C;
+  box-shadow: 0 0 10px #00F0FF, 0 0 20px #00F0FF;
 }
 
 .resume-cta {
