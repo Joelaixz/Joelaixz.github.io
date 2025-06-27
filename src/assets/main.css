@@ -1,48 +1,52 @@
-/* 引入 CSS 變數 */
+/* main.css */
 @import './base.css';
 
-/* 引入 Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap');
-
-/* 全局樣式重置和基礎設定 */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 16px;
-  /* ✨ 新增：實現平滑滾動效果 ✨ */
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  color: var(--color-text-primary);
-  background: var(--color-background);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  color: var(--color-text-primary);
-  font-weight: 600;
+#app {
+  max-width: 100%;
+  margin: 0 auto;
+  font-weight: normal;
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 a:hover {
-  color: #33bbff;
+  opacity: 0.8;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
