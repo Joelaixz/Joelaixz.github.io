@@ -170,6 +170,16 @@ const router = createRouter({
           props: route => ({ skillData: allSkillsData['vue-pinia'] })
         },
       ]
+    },
+    {
+      path: '/project/project-two',
+      name: 'project-two',
+      component: () => import('@/views/ProjectPageTwo.vue'),
+    },
+    {
+      path: '/project/project-three',
+      name: 'project-three',
+      component: () => import('@/views/ProjectPageThree.vue'),
     }
   ],
   // 定義路由切換時的滾動行為
@@ -193,5 +203,3 @@ const router = createRouter({
 });
 
 export default router;
-
-

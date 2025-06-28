@@ -10,25 +10,104 @@
       </div>
       <!-- 投影片的內容區域，包含標題、簡介、技術標籤和行動呼籲按鈕 -->
       <div class="slide-content">
-        <h1>複合技能展示</h1>
-        <p class="one-liner-pitch">透過實際範例，深入探索我的前端開發技能。</p>
+        <h1>{{ currentProject.title }}</h1>
+        <p class="one-liner-pitch">{{ currentProject.description }}</p>
         <div class="tech-tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>Vue.js</span>
+          <span v-for="tech in currentProject.techTags" :key="tech">{{ tech }}</span>
         </div>
         <div class="cta-buttons">
           <!-- "查看專案" 按鈕，導向到技能展示頁面的狀態管理子頁面 -->
-          <router-link to="/project/skills-showcase/html/semantic-tags" class="btn-primary">查看專案</router-link>
+          <router-link :to="currentProject.link" class="btn-primary">查看專案</router-link>
         </div>
       </div>
+
+      <!-- Swiper 導航按鈕 -->
+      <div class="swiper-navigation">
+        <button @click="prevProject" class="nav-button prev-button">&#10094;</button>
+        <button @click="nextProject" class="nav-button next-button">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- 時間進度條 -->
+    <div class="progress-bar-container">
+      <div class="progress-bar" :style="{ width: progressBarWidth + '%' }"></div>
     </div>
   </section>
 </template>
 
 <script setup>
-// 在實際應用中，此處會導入並配置 Swiper.js 或其他輪播庫
+import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
+
+const projects = ref([
+  {
+    title: '專案一：複合技能展示',
+    description: '透過實際範例，深入探索我的前端開發技能。',
+    techTags: ['HTML', 'CSS', 'JavaScript', 'Vue.js'],
+    link: '/project/skills-showcase/html/semantic-tags',
+  },
+  {
+    title: '專案二：智慧家居控制',
+    description: '一個基於物聯網技術的智慧家居管理系統，實現遠端控制與自動化。',
+    techTags: ['Vue.js', 'Node.js', 'IoT', 'MongoDB'],
+    link: '/project/project-two',
+  },
+  {
+    title: '專案三：互動式數據可視化',
+    description: '將複雜的數據轉化為直觀的圖表與儀表板，提供動態分析。',
+    techTags: ['React', 'D3.js', 'Python', 'DataViz'],
+    link: '/project/project-three',
+  },
+]);
+
+const currentIndex = ref(0);
+let autoPlayInterval = null;
+let progressBarInterval = null;
+const progressBarWidth = ref(0);
+const slideDuration = 6000; // 幻燈片切換時間 (毫秒)
+const updateInterval = 100; // 進度條更新間隔 (毫秒)
+
+const currentProject = computed(() => projects.value[currentIndex.value]);
+
+const startAutoPlay = () => {
+  clearInterval(autoPlayInterval);
+  clearInterval(progressBarInterval);
+  progressBarWidth.value = 0;
+
+  autoPlayInterval = setInterval(() => {
+    nextProject();
+  }, slideDuration);
+
+  progressBarInterval = setInterval(() => {
+    progressBarWidth.value += (updateInterval / slideDuration) * 100;
+    if (progressBarWidth.value >= 100) {
+      progressBarWidth.value = 100;
+    }
+  }, updateInterval);
+};
+
+const resetAutoPlay = () => {
+  startAutoPlay();
+};
+
+const nextProject = () => {
+  currentIndex.value = (currentIndex.value + 1) % projects.value.length;
+  resetAutoPlay();
+};
+
+const prevProject = () => {
+  currentIndex.value = (currentIndex.value - 1 + projects.value.length) % projects.value.length;
+  resetAutoPlay();
+};
+
+onMounted(() => {
+  startAutoPlay();
+});
+
+onUnmounted(() => {
+  clearInterval(autoPlayInterval);
+  clearInterval(progressBarInterval);
+});
 </script>
 
 <style scoped>
@@ -124,5 +203,60 @@
   font-weight: bold; /* 字體粗細 */
   margin: 0 0.5rem; /* 外邊距 */
   transition: all 0.3s ease; /* 所有屬性在 0.3 秒內平滑過渡 */
+}
+
+/* Swiper 導航按鈕 */
+.swiper-navigation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px; /* 左右邊距 */
+  z-index: 2; /* 確保在內容上方 */
+}
+
+.nav-button {
+  background-color: rgba(255, 255, 255, 0.2); /* 半透明白色背景 */
+  color: white;
+  border: none;
+  border-radius: 50%; /* 圓形按鈕 */
+  width: 60px; /* 加大按鈕尺寸 */
+  height: 60px; /* 加大按鈕尺寸 */
+  font-size: 2.5rem; /* 加大字體 */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px); /* 增加模糊效果 */
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.4); /* 懸停時變亮 */
+}
+
+/* 進度條容器 */
+.progress-bar-container {
+  position: absolute;
+  bottom: 10px; /* 距離底部 10px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px); /* 寬度佔滿，左右各留 20px */
+  max-width: 1100px; /* 與 .container 寬度一致 */
+  height: 5px; /* 進度條高度 */
+  background-color: rgba(128, 128, 128, 0.3); /* 灰階背景色 */
+  border-radius: 2.5px; /* 圓角 */
+  overflow: hidden; /* 隱藏超出部分 */
+  z-index: 3; /* 確保在最上層 */
+}
+
+/* 進度條本身 */
+.progress-bar {
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.7); /* 灰階進度色 */
+  transition: width 0.1s linear; /* 平滑的寬度過渡 */
 }
 </style>
