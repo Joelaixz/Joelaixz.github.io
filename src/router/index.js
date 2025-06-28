@@ -13,12 +13,7 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
-    {
-      // 履歷頁面路由，使用延遲載入以優化性能
-      path: '/resume',
-      name: 'resume',
-      component: () => import('../views/ResumeView.vue')
-    },
+    
     {
       // 專案技能展示頁面路由，包含巢狀路由
       path: '/project/skills-showcase',

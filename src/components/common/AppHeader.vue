@@ -11,7 +11,7 @@
       <router-link to="/#skills">技能</router-link>
       <router-link to="/#contact">聯絡我</router-link>
     </nav>
-    <!-- 控制項區域，包含主題切換按鈕和履歷連結 -->
+    <!-- 控制項區域，包含主題切換按鈕 -->
     <div class="controls">
       <!-- 主題切換按鈕，根據當前主題顯示不同文字和樣式 -->
       <button @click="toggleTheme" class="theme-toggle-button" :class="currentTheme">
@@ -19,8 +19,6 @@
         <span v-else-if="currentTheme === 'cyberpunk'">🤖 Cyber</span>
         <span v-else-if="currentTheme === 'light'">☀️ Light</span>
       </button>
-      <!-- 查看履歷的行動呼籲按鈕 -->
-      <router-link to="/resume" class="resume-cta">查看履歷</router-link>
     </div>
   </header>
 </template>
@@ -150,21 +148,5 @@ onMounted(() => {
   background-color: #00F0FF; /* 亮青色 */
   color: #0A043C;
   box-shadow: 0 0 10px #00F0FF, 0 0 20px #00F0FF; /* 發光效果 */
-}
-
-/* 履歷行動呼籲按鈕樣式 */
-.resume-cta {
-  background-color: var(--primary-color); /* 背景顏色，來自 CSS 變數 */
-  color: var(--button-text-color); /* 文字顏色，來自 CSS 變數 */
-  padding: 0.5rem 1rem; /* 內邊距 */
-  border-radius: 5px; /* 圓角邊框 */
-  text-decoration: none; /* 移除下劃線 */
-  font-weight: bold; /* 字體粗細 */
-  transition: background-color 0.3s ease; /* 背景顏色過渡動畫 */
-}
-
-/* 履歷行動呼籲按鈕懸停時的樣式 */
-.resume-cta:hover {
-  opacity: 0.9; /* 懸停時透明度降低 */
 }
 </style>
