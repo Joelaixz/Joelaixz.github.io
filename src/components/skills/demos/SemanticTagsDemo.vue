@@ -8,7 +8,7 @@
 
     <div class="news-page-container" :class="{ 'x-ray-mode': isXRayActive }">
       <header>
-        <h1>新聞報導標題</h1>
+        <h1>科技前瞻：AI如何重塑未來生活</h1>
         <nav>
           <ul>
             <li><a href="#">首頁</a></li>
@@ -21,40 +21,40 @@
       <main>
         <article>
           <header>
-            <h2>文章主標題：探索前端框架的未來</h2>
-            <address>作者：<a rel="author" href="#">Joel</a></address>
-            <time datetime="2024-07-20">發布日期：2024年7月20日</time>
+            <h2>深度解析：生成式AI的最新突破與應用前景</h2>
+            <address>作者：<a rel="author" href="#">李明</a></address>
+            <time datetime="2025-06-28">發布日期：2025年6月28日</time>
           </header>
-          <p>這是一段關於前端框架發展趨勢的引言。隨著技術的快速迭代，前端開發者面臨著不斷學習新工具和技術的挑戰。</p>
+          <p>人工智慧（AI）的發展正以前所未有的速度改變著我們的世界。特別是生成式AI，在圖像生成、自然語言處理等領域取得了令人矚目的成就。</p>
           <figure>
-            <img src="https://via.placeholder.com/600x300?text=Frontend+Frameworks" alt="前端框架示意圖">
-            <figcaption>圖：前端框架的生態系統。</figcaption>
+            <img src="/dummy200.jpg" alt="AI技術示意圖">
+            <figcaption>圖：AI技術的快速發展。</figcaption>
           </figure>
-          <p>在過去的幾年中，Vue、React 和 Angular 等主流框架持續演進，提供了更高效、更靈活的開發方式。同時，新的框架和工具也層出不窮，例如 Svelte、SolidJS 和 Qwik，它們各自帶來了獨特的優勢和解決方案。</p>
-          <h3>子標題：Vue 3 的 Composition API</h3>
-          <p>Vue 3 引入的 Composition API 徹底改變了組件的組織方式，提供了更強大的邏輯複用能力和更好的 TypeScript 支持。這使得大型應用程式的開發和維護變得更加容易。</p>
+          <p>從藝術創作到科學研究，生成式AI的應用範圍不斷擴大。它不僅能輔助人類完成複雜任務，甚至在某些方面展現出超越人類的創造力。</p>
+          <h3>AI倫理與挑戰：我們該如何應對？</h3>
+          <p>然而，AI的快速發展也帶來了一系列倫理和社會挑戰，例如數據隱私、演算法偏見以及對就業市場的影響。如何平衡技術進步與社會責任，成為當前亟需解決的問題。</p>
           <blockquote>
-            <p>「語意化 HTML 不僅僅是為了瀏覽器，更是為了人類和機器都能更好地理解內容。」</p>
-            <footer>— 某位前端專家</footer>
+            <p>「科技的真正價值，在於它能為人類帶來福祉，而非製造新的困境。」</p>
+            <footer>— 某位科技倫理學者</footer>
           </blockquote>
-          <p>除了框架本身，狀態管理、路由、打包工具等周邊生態系統也在不斷成熟。開發者需要綜合考慮專案需求、團隊熟悉度以及社區支持等因素，選擇最適合的技術棧。</p>
+          <p>未來，我們需要建立更完善的法律法規和倫理準則，引導AI技術朝著有利於人類社會的方向發展。同時，教育和培訓也應跟上步伐，幫助人們適應AI時代的新變化。</p>
           <footer>
-            <p>相關標籤：<a href="#">前端</a>, <a href="#">框架</a>, <a href="#">Vue</a>, <a href="#">React</a></p>
+            <p>相關標籤：<a href="#">AI</a>, <a href="#">科技</a>, <a href="#">未來</a>, <a href="#">倫理</a></p>
           </footer>
         </article>
 
         <aside>
           <h3>相關文章</h3>
           <ul>
-            <li><a href="#">如何選擇適合你的前端框架</a></li>
-            <li><a href="#">深入理解 JavaScript 異步編程</a></li>
-            <li><a href="#">CSS 變數在主題切換中的應用</a></li>
+            <li><a href="#">AI在醫療領域的應用</a></li>
+            <li><a href="#">區塊鏈技術的最新進展</a></li>
+            <li><a href="#">量子計算：下一個科技前沿</a></li>
           </ul>
         </aside>
       </main>
 
       <footer>
-        <p>&copy; 2024 新聞報導範例</p>
+        <p>&copy; 2025 科技前瞻新聞</p>
       </footer>
     </div>
   </div>
@@ -63,7 +63,7 @@
 <script setup>
 import { ref } from 'vue';
 
-const isXRayActive = ref(false);
+const isXRayActive = ref(true);
 
 const toggleXRay = () => {
   isXRayActive.value = !isXRayActive.value;
@@ -164,10 +164,13 @@ const toggleXRay = () => {
   padding: 0;
 }
 
-.news-page-container nav li,
-.news-page-container aside li {
+.news-page-container nav li {
   display: inline-block;
   margin-right: 1rem;
+}
+.news-page-container aside li {
+  display: block;
+  margin-bottom: 0.5rem; /* 為每個連結增加一些間距 */
 }
 
 .news-page-container a {
