@@ -125,13 +125,4 @@
   margin: 0 0.5rem; /* 外邊距 */
   transition: all 0.3s ease; /* 所有屬性在 0.3 秒內平滑過渡 */
 }
-
-.btn-primary {
-  background-color: var(--primary-color); /* 背景顏色，來自 CSS 變數 */
-  color: var(--button-text-color); /* 文字顏色，來自 CSS 變數 */
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px); /* 懸停時向上移動 3 像素 */
-}
 </style>

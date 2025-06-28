@@ -13,6 +13,22 @@
   --hero-overlay-color: rgba(0, 0, 0, 0.5);
   --header-height: 80px; /* 定義頁首高度 */
   --footer-height: 100px; /* 定義頁尾高度 */
+
+  /* X-Ray Mode Colors (Light Theme) */
+  --xray-header-bg: rgba(173, 216, 230, 0.3); /* LightBlue */
+  --xray-header-border: #ADD8E6;
+  --xray-nav-bg: rgba(144, 238, 144, 0.3); /* LightGreen */
+  --xray-nav-border: #90EE90;
+  --xray-main-bg: rgba(255, 255, 0, 0.3); /* Yellow */
+  --xray-main-border: #FFFF00;
+  --xray-article-bg: rgba(255, 165, 0, 0.3); /* Orange */
+  --xray-article-border: #FFA500;
+  --xray-aside-bg: rgba(221, 160, 221, 0.3); /* Plum */
+  --xray-aside-border: #DDA0DD;
+  --xray-footer-bg: rgba(192, 192, 192, 0.3); /* Silver */
+  --xray-footer-border: #C0C0C0;
+  --xray-tag-color: #333;
+  --xray-tag-bg: rgba(255, 255, 255, 0.8);
 }
 
 [data-theme="dark"] {
@@ -25,6 +41,22 @@
   --button-text-color: #121212;
   --hero-text-color: #FFFFFF;
   --hero-overlay-color: rgba(0, 0, 0, 0.6);
+
+  /* X-Ray Mode Colors (Dark Theme) */
+  --xray-header-bg: rgba(70, 130, 180, 0.3); /* SteelBlue */
+  --xray-header-border: #4682B4;
+  --xray-nav-bg: rgba(60, 179, 113, 0.3); /* MediumSeaGreen */
+  --xray-nav-border: #3CB371;
+  --xray-main-bg: rgba(255, 215, 0, 0.3); /* Gold */
+  --xray-main-border: #FFD700;
+  --xray-article-bg: rgba(255, 140, 0, 0.3); /* DarkOrange */
+  --xray-article-border: #FF8C00;
+  --xray-aside-bg: rgba(147, 112, 219, 0.3); /* MediumPurple */
+  --xray-aside-border: #9370DB;
+  --xray-footer-bg: rgba(105, 105, 105, 0.3); /* DimGray */
+  --xray-footer-border: #696969;
+  --xray-tag-color: #E0E0E0;
+  --xray-tag-bg: rgba(0, 0, 0, 0.8);
 }
 
 [data-theme="cyberpunk"] {
@@ -37,6 +69,22 @@
   --button-text-color: #0A043C;
   --hero-text-color: #FFFFFF;
   --hero-overlay-color: rgba(255, 0, 255, 0.2);
+
+  /* X-Ray Mode Colors (Cyberpunk Theme) */
+  --xray-header-bg: rgba(0, 255, 255, 0.3); /* Aqua */
+  --xray-header-border: #00FFFF;
+  --xray-nav-bg: rgba(0, 255, 0, 0.3); /* Lime */
+  --xray-nav-border: #00FF00;
+  --xray-main-bg: rgba(255, 0, 255, 0.3); /* Fuchsia */
+  --xray-main-border: #FF00FF;
+  --xray-article-bg: rgba(255, 255, 0, 0.3); /* Yellow */
+  --xray-article-border: #FFFF00;
+  --xray-aside-bg: rgba(128, 0, 128, 0.3); /* Purple */
+  --xray-aside-border: #800080;
+  --xray-footer-bg: rgba(0, 0, 255, 0.3); /* Blue */
+  --xray-footer-border: #0000FF;
+  --xray-tag-color: #00F0FF;
+  --xray-tag-bg: rgba(255, 0, 255, 0.8);
 }
 
 /* GLOBAL STYLES */

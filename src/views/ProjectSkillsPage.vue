@@ -7,7 +7,7 @@
     <!-- 左側導覽列，用於切換不同的技能展示內容 -->
     <SkillsSidebar />
     <!-- 右側內容區，用於顯示巢狀子路由的內容 -->
-    <div class="content-area">
+    <div class="content-area" :class="{ 'centered-content': isLoading }">
       <!-- 當 isLoading 為 true 時顯示讀取動畫，否則顯示路由內容 -->
       <LoadingSpinner v-if="isLoading" />
       <router-view v-else v-slot="{ Component }">
@@ -61,17 +61,21 @@ onMounted(() => {
 .skills-showcase-layout {
   display: flex; /* 使用 Flexbox 佈局，使側邊欄和內容區並排顯示 */
   min-height: calc(100vh - var(--header-height) - var(--footer-height)); /* 確保頁面至少佔據整個視窗高度，減去頁首和頁尾的高度 */
-  padding-top: var(--header-height); /* 為頁首留出空間 */
-  padding-bottom: var(--footer-height); /* 為頁尾留出空間 */
+  /* 移除 padding-top 和 padding-bottom */
 }
 
 /* 內容區的樣式 */
 .content-area {
   flex-grow: 1; /* 讓內容區佔據剩餘的所有可用空間 */
   padding: 2rem; /* 內容區內邊距 */
-  display: flex; /* 讓內容區內部也使用 Flexbox，以便讀取動畫居中 */
-  align-items: center; /* 垂直居中讀取動畫 */
-  justify-content: center; /* 水平居中讀取動畫 */
+  /* 預設不居中，讓內容像 Markdown 一樣由上而下呈現 */
+}
+
+/* 當內容區需要居中時的樣式 (例如顯示讀取動畫時) */
+.centered-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 路由切換過渡動畫的樣式 */
@@ -87,3 +91,4 @@ onMounted(() => {
   opacity: 0; /* 透明度為 0，表示完全透明 */
 }
 </style>
+

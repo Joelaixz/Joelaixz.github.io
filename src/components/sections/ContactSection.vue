@@ -63,22 +63,4 @@ p {
   color: var(--text-color); /* 文字顏色，來自 CSS 變數 */
   font-size: 1rem; /* 字體大小 */
 }
-
-/* 主要按鈕樣式 */
-.btn-primary {
-  background-color: var(--primary-color); /* 背景顏色，來自 CSS 變數 */
-  color: var(--button-text-color); /* 文字顏色，來自 CSS 變數 */
-  padding: 1rem; /* 內邊距 */
-  border-radius: 5px; /* 圓角邊框 */
-  border: none; /* 無邊框 */
-  cursor: pointer; /* 鼠標樣式 */
-  font-weight: bold; /* 字體粗細 */
-  font-size: 1.1rem; /* 字體大小 */
-  transition: background-color 0.3s ease; /* 背景顏色過渡動畫 */
-}
-
-/* 主要按鈕懸停時的樣式 */
-.btn-primary:hover {
-  opacity: 0.9; /* 懸停時透明度降低 */
-}
 </style>
