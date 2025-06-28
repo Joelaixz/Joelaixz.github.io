@@ -1,11 +1,6 @@
 import './assets/base.css'
 import './assets/main.css'
 
-// 引入 Bootstrap 的 CSS 樣式，提供響應式設計和預設組件樣式
-import 'bootstrap/dist/css/bootstrap.min.css'
-// 引入 Bootstrap 的 JS 功能，例如下拉選單、模態框等互動功能
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-
 // 從 Vue 框架中導入 createApp 函數，用於創建 Vue 應用實例
 import { createApp } from 'vue'
 // 從 Pinia 狀態管理庫中導入 createPinia 函數，用於創建 Pinia 實例
