@@ -19,5 +19,18 @@ app.use(createPinia())
 // 將 Vue Router 掛載到 Vue 應用程式上，啟用路由功能
 app.use(router)
 
+// Import the Font Awesome core library
+import { library } from '@fortawesome/fontawesome-svg-core'
+// Import the Font Awesome Vue component
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+// Import specific icons you want to use (e.g., faGithub for the GitHub icon)
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+
+// Add the imported icons to the library
+library.add(faGithub)
+
+// 註冊 Font Awesome 組件為全域組件
+app.component('font-awesome-icon', FontAwesomeIcon)
+
 // 將 Vue 應用程式掛載到 HTML 頁面中 ID 為 'app' 的元素上
 app.mount('#app')

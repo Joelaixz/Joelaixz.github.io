@@ -19,6 +19,10 @@
         <span v-else-if="currentTheme === 'cyberpunk'">🤖 Cyber</span>
         <span v-else-if="currentTheme === 'light'">☀️ Light</span>
       </button>
+      <!-- GitHub 連結 -->
+      <a href="https://github.com/Joelaixz/Joelaixz.github.io" target="_blank" rel="noopener noreferrer" class="github-link">
+        <font-awesome-icon :icon="['fab', 'github']" class="github-icon" />
+      </a>
     </div>
   </header>
 </template>
@@ -173,5 +177,24 @@ onMounted(() => {
   background-color: #00F0FF; /* 亮青色 */
   color: #0A043C;
   box-shadow: 0 0 10px #00F0FF, 0 0 20px #00F0FF; /* 發光效果 */
+}
+
+/* GitHub 連結樣式 */
+.github-link {
+  color: var(--text-color); /* 顏色 */
+  text-decoration: none; /* 移除下劃線 */
+  transition: color 0.3s ease;
+  display: flex; /* 讓圖片可以垂直居中 */
+  align-items: center;
+}
+
+.github-link:hover {
+  color: var(--primary-color); /* 懸停時變色 */
+}
+
+.github-icon {
+  width: 28px; /* 設定圖示寬度 */
+  height: 28px; /* 設定圖示高度 */
+  /* Font Awesome 圖示顏色由 color 屬性控制 */
 }
 </style>
