@@ -241,11 +241,11 @@ onUnmounted(() => {
 /* 進度條容器 */
 .progress-bar-container {
   position: absolute;
-  bottom: 10px; /* 距離底部 10px */
+  bottom: 20px; /* 距離底部 10px */
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 40px); /* 寬度佔滿，左右各留 20px */
-  max-width: 1100px; /* 與 .container 寬度一致 */
+  width: 10%; /* 寬度佔滿，左右各留 20px */
+  max-width: 1000px; /* 與 .container 寬度一致 */
   height: 5px; /* 進度條高度 */
   background-color: rgba(128, 128, 128, 0.3); /* 灰階背景色 */
   border-radius: 2.5px; /* 圓角 */
