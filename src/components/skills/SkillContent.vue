@@ -22,6 +22,7 @@
       </div>
       <!-- 根據 skillData.title 條件渲染不同的 Demo 組件 -->
       <SemanticTagsDemo v-if="skillData.title === '語意化標籤'" />
+      <FormsValidationDemo v-if="skillData.title === '表單與原生驗證'" />
       <!-- 其他 Demo 組件將在此處添加 -->
     </div>
   </div>
@@ -32,6 +33,7 @@
 import { ref, defineProps } from 'vue'
 // 導入語意化標籤的 Demo 組件
 import SemanticTagsDemo from '@/components/skills/demos/SemanticTagsDemo.vue'
+import FormsValidationDemo from '@/components/skills/demos/FormsValidationDemo.vue'
 
 // 定義組件接收的 props，期望接收一個包含技能數據的 Object
 const props = defineProps({
