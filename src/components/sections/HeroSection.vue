@@ -10,17 +10,17 @@
       </div>
       <!-- 投影片的內容區域，包含標題、簡介、技術標籤和行動呼籲按鈕 -->
       <div class="slide-content">
-        <h1>專案標題 (Project Title)</h1>
-        <p class="one-liner-pitch">一個幫助使用者追蹤閱讀進度的社群平台。</p>
+        <h1>複合技能展示</h1>
+        <p class="one-liner-pitch">透過實際範例，深入探索我的前端開發技能。</p>
         <div class="tech-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
           <span>Vue.js</span>
-          <span>Firebase</span>
-          <span>Pinia</span>
-          <span>Vite</span>
         </div>
         <div class="cta-buttons">
           <!-- "查看專案" 按鈕，導向到技能展示頁面的狀態管理子頁面 -->
-          <router-link to="/project/skills-showcase/state-management" class="btn-primary">查看專案</router-link>
+          <router-link to="/project/skills-showcase/html/semantic-tags" class="btn-primary">查看專案</router-link>
         </div>
       </div>
     </div>

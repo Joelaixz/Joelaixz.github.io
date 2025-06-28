@@ -1,12 +1,12 @@
 <template>
   <!-- 應用程式的固定頁首，包含導覽、Logo 和控制項 -->
-  <header class="sticky-header">
+  <header class="sticky-header" :class="{ 'skills-page-header': isSkillsPage }">
     <!-- 網站 Logo，點擊可返回首頁 -->
     <div class="logo">
       <router-link to="/">Joel</router-link>
     </div>
-    <!-- 主要導覽連結 -->
-    <nav class="nav-links">
+    <!-- 主要導覽連結，在技能頁面時隱藏 -->
+    <nav class="nav-links" v-if="!isSkillsPage">
       <router-link to="/#about">關於我</router-link>
       <router-link to="/#skills">技能</router-link>
       <router-link to="/#contact">聯絡我</router-link>
@@ -25,9 +25,17 @@
 
 <script setup>
 // 導入 Vue 的響應式 API 和生命週期鉤子
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, defineProps } from 'vue';
 // 導入 Vue Router 的 RouterLink 組件
 import { RouterLink } from 'vue-router';
+
+// 定義組件接收的 props
+const props = defineProps({
+  isSkillsPage: {
+    type: Boolean,
+    default: false
+  }
+});
 
 // 定義可用的主題列表
 const themes = ['dark', 'cyberpunk', 'light'];
@@ -81,9 +89,21 @@ onMounted(() => {
   z-index: 1000; /* 確保在其他內容之上 */
   transition: background-color 0.3s ease; /* 背景顏色過渡動畫 */
   border-bottom: 1px solid var(--border-color); /* 底部邊框 */
+  height: var(--header-height); /* 設定頁首高度 */
+}
+
+/* 技能頁面時頁首的特殊樣式 */
+.skills-page-header {
+  justify-content: center; /* Logo 置中 */
 }
 
 /* Logo 樣式 */
+.logo {
+  /* 在技能頁面時，Logo 佔據更多空間以實現置中 */
+  flex-grow: 1;
+  text-align: center;
+}
+
 .logo a {
   font-weight: bold; /* 字體粗細 */
   font-size: 1.5rem; /* 字體大小 */
@@ -92,6 +112,11 @@ onMounted(() => {
 }
 
 /* 導覽連結樣式 */
+.nav-links {
+  flex-grow: 1; /* 讓導覽連結佔據更多空間 */
+  text-align: center;
+}
+
 .nav-links a {
   margin: 0 1rem; /* 左右外邊距 */
   text-decoration: none; /* 移除下劃線 */

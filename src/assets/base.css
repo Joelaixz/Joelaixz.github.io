@@ -11,6 +11,8 @@
   --button-text-color: #FFFFFF;
   --hero-text-color: #FFFFFF;
   --hero-overlay-color: rgba(0, 0, 0, 0.5);
+  --header-height: 80px; /* 定義頁首高度 */
+  --footer-height: 100px; /* 定義頁尾高度 */
 }
 
 [data-theme="dark"] {

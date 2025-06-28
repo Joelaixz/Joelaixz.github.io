@@ -17,4 +17,9 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  // 開發伺服器配置
+  server: {
+    open: true, // 自動打開瀏覽器
+    host: true, // 監聽所有網路介面，允許從外部訪問
+  },
 })
