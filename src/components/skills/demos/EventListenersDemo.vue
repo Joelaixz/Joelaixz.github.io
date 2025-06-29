@@ -198,7 +198,6 @@ const clearLog = () => {
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   cursor: default;
-  tabindex: 0; /* Make it focusable for keyboard events */
 }
 
 .event-zone p {
