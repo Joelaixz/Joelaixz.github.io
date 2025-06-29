@@ -31,6 +31,7 @@
       <EventListenersDemo v-if="skillData.title === '監聽事件'" />
       <AsyncAwaitDemo v-if="skillData.title === 'Async/Await'" />
       <ES6FunctionsDemo v-if="skillData.title === 'ES6+函式'" />
+      <ReactivityDemo v-if="skillData.title === '響應式'" />
       <!-- 其他 Demo 組件將在此處添加 -->
     </div>
   </div>
@@ -50,6 +51,7 @@ import RwdDemo from '@/components/skills/demos/RwdDemo.vue'
 import EventListenersDemo from '@/components/skills/demos/EventListenersDemo.vue'
 import AsyncAwaitDemo from '@/components/skills/demos/AsyncAwaitDemo.vue'
 import ES6FunctionsDemo from '@/components/skills/demos/ES6FunctionsDemo.vue'
+import ReactivityDemo from '@/components/skills/demos/ReactivityDemo.vue'
 
 // 定義組件接收的 props，期望接收一個包含技能數據的 Object
 const props = defineProps({
