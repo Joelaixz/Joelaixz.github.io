@@ -13,6 +13,7 @@
   --hero-overlay-color: rgba(0, 0, 0, 0.5);
   --header-height: 80px; /* 定義頁首高度 */
   --footer-height: 100px; /* 定義頁尾高度 */
+  --focus-outline-color: #007bff; /* 預設焦點外框顏色 */
 
   /* X-Ray Mode Colors (Light Theme) */
   --xray-header-bg: rgba(173, 216, 230, 0.3); /* LightBlue */
@@ -41,6 +42,7 @@
   --button-text-color: #121212;
   --hero-text-color: #FFFFFF;
   --hero-overlay-color: rgba(0, 0, 0, 0.6);
+  --focus-outline-color: #3498db; /* 深色主題焦點外框顏色 */
 
   /* X-Ray Mode Colors (Dark Theme) */
   --xray-header-bg: rgba(70, 130, 180, 0.3); /* SteelBlue */
@@ -85,6 +87,7 @@
   --xray-footer-border: #0000FF;
   --xray-tag-color: #00F0FF;
   --xray-tag-bg: rgba(255, 0, 255, 0.8);
+  --focus-outline-color: #00F0FF; /* 賽博龐克主題焦點外框顏色 */
 }
 
 /* GLOBAL STYLES */
