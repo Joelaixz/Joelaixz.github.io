@@ -2,36 +2,37 @@
   <!-- 技能樹/工具箱區塊的根元素，用於展示個人或團隊的技能 -->
   <section id="skills" class="skills-section">
     <div class="container">
-      <h2>技能樹 / Toolbox</h2>
-      <!-- 技能網格佈局，用於分類展示不同技能 -->
+      <h2>技能樹</h2>
       <div class="skills-grid">
-        <!-- 單個技能類別區塊 -->
         <div class="skill-category">
-          <h3>前端 (Frontend)</h3>
-          <!-- 技能卡片，展示具體技能 -->
-          <div class="skill-card">Vue.js</div>
-          <div class="skill-card">React</div>
+          <h3>前端開發</h3>
+          <div class="skill-card">HTML5</div>
+          <div class="skill-card">CSS3</div>
           <div class="skill-card">JavaScript (ES6+)</div>
-          <div class="skill-card">CSS3 & SASS</div>
+          <div class="skill-card">Vue.js</div>
+          <div class="skill-card">Vue Router</div>
           <div class="skill-card">Three.js</div>
         </div>
         <div class="skill-category">
-          <h3>後端 (Backend)</h3>
-          <div class="skill-card">Node.js</div>
-          <div class="skill-card">Express</div>
-          <div class="skill-card">Firebase</div>
-        </div>
-        <div class="skill-category">
-          <h3>設計 (Design)</h3>
+          <h3>設計</h3>
           <div class="skill-card">Figma</div>
           <div class="skill-card">UI/UX Principles</div>
+          <div class="skill-card">Blender</div>
         </div>
         <div class="skill-category">
-          <h3>工具 (Tools)</h3>
+          <h3>開發流程</h3>
+          <div class="skill-card">需求分析與規劃</div>
+          <div class="skill-card">介面設計與原型</div>
+          <div class="skill-card">模組化開發</div>
+          <div class="skill-card">測試與除錯</div>
+          <div class="skill-card">部署與優化</div>
+        </div>
+        <div class="skill-category">
+          <h3>開發工具</h3>
           <div class="skill-card">Git & GitHub</div>
           <div class="skill-card">Vite</div>
-          <div class="skill-card">Webpack</div>
-          <div class="skill-card">Docker</div>
+          <div class="skill-card">ESLint</div>
+          <div class="skill-card">Prettier</div>
         </div>
       </div>
     </div>
