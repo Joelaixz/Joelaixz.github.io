@@ -10,19 +10,14 @@
         </div>
         <!-- 個人文字介紹區塊 -->
         <div class="about-text">
-          <h2>Hello, I'm Joel</h2>
+          <h2>Hello! 我是賴信宗</h2>
           <p>
             我對學習新知抱持高度熱情，並擅長在短時間內將所學應用於實踐。今年三月，我從零開始投入前端工程師的專業訓練；到了六月，我已不僅掌握了前端開發的核心技能，更進一步將 AI 協作工具（Gemini & Gemini CLI）融入開發流程。
           </p>
           <p>
             目前，我已能運用這些技能獨立開發個人網站，並將所學實踐於正在製作的團隊畢業專案中。我相信，這種快速迭代、擁抱新技術的學習模式，能讓我不斷成長，成為一名能持續為團隊創造價值的工程師。
           </p>
-          <!-- 社群連結區塊 -->
-          <div class="social-links">
-            <a href="#" title="GitHub">GH</a>
-            <a href="#" title="LinkedIn">LI</a>
-            <a href="#" title="Dribbble">DR</a>
-          </div>
+          
         </div>
       </div>
     </div>
