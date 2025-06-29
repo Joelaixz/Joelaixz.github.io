@@ -6,7 +6,7 @@
       <!-- 投影片的背景區域，可以放置圖片或影片 -->
       <div class="slide-background">
         <!-- 動態影片或 GIF 的佔位符 -->
-        <div class="video-placeholder"></div>
+        <div class="video-placeholder" :style="{ backgroundImage: 'url(' + currentProject.backgroundImage + ')' }"></div>
       </div>
       <!-- 投影片的內容區域，包含標題、簡介、技術標籤和行動呼籲按鈕 -->
       <div class="slide-content">
@@ -45,18 +45,21 @@ const projects = ref([
     description: '透過實際範例，深入探索我的前端開發技能。',
     techTags: ['HTML', 'CSS', 'JavaScript', 'Vue.js'],
     link: '/project/skills-showcase/html/semantic-tags',
+    backgroundImage: '/ProjectSkillsPage.gif',
   },
   {
     title: '專案二：Three.js 3D 互動網頁',
     description: '利用 Three.js 打造沉浸式 3D 互動體驗，探索網頁上的無限可能。',
     techTags: ['Three.js', 'WebGL', 'JavaScript', '3D Modeling'],
     link: '/project/project-two',
+    backgroundImage: '/project-two.jpg',
   },
   {
     title: '專案三：團隊畢業專題開發日誌',
     description: '記錄團隊畢業專題從概念到實現的完整過程，包含技術選型、設計與開發挑戰。',
     techTags: ['Vue.js', 'Blender', 'Three.js', 'Project Management'],
     link: '/project/project-three',
+    backgroundImage: '/project-three.jpg',
   },
 ]);
 
@@ -145,7 +148,7 @@ onUnmounted(() => {
   width: 100%; /* 寬度佔滿父元素 */
   height: 100%; /* 高度佔滿父元素 */
   background-color: #333; /* 預設背景色 */
-  background-image: url('https://via.placeholder.com/1920x1080/333/808080?text=Dynamic+Project+Video'); /* 佔位圖片 */
+  background-image: url('/ProjectSkillsPage.gif'); /* 佔位圖片 */
   background-size: cover; /* 背景圖片覆蓋整個元素 */
   background-position: center; /* 背景圖片居中 */
 }
