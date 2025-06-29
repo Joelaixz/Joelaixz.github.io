@@ -35,7 +35,7 @@ import { ref, defineProps } from 'vue'
 // 導入語意化標籤的 Demo 組件
 import SemanticTagsDemo from '@/components/skills/demos/SemanticTagsDemo.vue'
 import FormsValidationDemo from '@/components/skills/demos/FormsValidationDemo.vue'
-import AccessibilityDemo from '@/components/skills/demos/AccessibilityDemo.vue'
+import AccessibilityDemo from '@/components/skills/demos/accessibility/AccessibilityDemo.vue'
 
 // 定義組件接收的 props，期望接收一個包含技能數據的 Object
 const props = defineProps({
