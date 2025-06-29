@@ -88,6 +88,7 @@
   --xray-tag-color: #00F0FF;
   --xray-tag-bg: rgba(255, 0, 255, 0.8);
   --focus-outline-color: #00F0FF; /* 賽博龐克主題焦點外框顏色 */
+  --primary-color-rgb: 255, 255, 0; /* Add this */
 }
 
 /* GLOBAL STYLES */
