@@ -27,6 +27,7 @@
       <PseudoElementsDemo v-if="skillData.title === '偽類元素'" />
       <AnimationsDemo v-if="skillData.title === '動畫'" />
       <CustomPropertiesDemo v-if="skillData.title === '自訂屬性'" />
+      <RwdDemo v-if="skillData.title === 'RWD'" />
       <!-- 其他 Demo 組件將在此處添加 -->
     </div>
   </div>
@@ -42,6 +43,7 @@ import AccessibilityDemo from '@/components/skills/demos/accessibility/Accessibi
 import PseudoElementsDemo from '@/components/skills/demos/PseudoElementsDemo.vue'
 import AnimationsDemo from '@/components/skills/demos/AnimationsDemo.vue'
 import CustomPropertiesDemo from '@/components/skills/demos/CustomPropertiesDemo.vue'
+import RwdDemo from '@/components/skills/demos/RwdDemo.vue'
 
 // 定義組件接收的 props，期望接收一個包含技能數據的 Object
 const props = defineProps({
