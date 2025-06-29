@@ -47,15 +47,15 @@ const projects = ref([
     link: '/project/skills-showcase/html/semantic-tags',
   },
   {
-    title: '專案二：智慧家居控制',
-    description: '一個基於物聯網技術的智慧家居管理系統，實現遠端控制與自動化。',
-    techTags: ['Vue.js', 'Node.js', 'IoT', 'MongoDB'],
+    title: '專案二：Three.js 3D 互動網頁',
+    description: '利用 Three.js 打造沉浸式 3D 互動體驗，探索網頁上的無限可能。',
+    techTags: ['Three.js', 'WebGL', 'JavaScript', '3D Modeling'],
     link: '/project/project-two',
   },
   {
-    title: '專案三：互動式數據可視化',
-    description: '將複雜的數據轉化為直觀的圖表與儀表板，提供動態分析。',
-    techTags: ['React', 'D3.js', 'Python', 'DataViz'],
+    title: '專案三：團隊畢業專題開發日誌',
+    description: '記錄團隊畢業專題從概念到實現的完整過程，包含技術選型、設計與開發挑戰。',
+    techTags: ['Vue.js', 'Blender', 'Three.js', 'Project Management'],
     link: '/project/project-three',
   },
 ]);
