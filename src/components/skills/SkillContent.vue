@@ -25,6 +25,7 @@
       <FormsValidationDemo v-if="skillData.title === '表單與原生驗證'" />
       <AccessibilityDemo v-if="skillData.title === '無障礙網頁'" />
       <PseudoElementsDemo v-if="skillData.title === '偽類元素'" />
+      <AnimationsDemo v-if="skillData.title === '動畫'" />
       <!-- 其他 Demo 組件將在此處添加 -->
     </div>
   </div>
@@ -38,6 +39,7 @@ import SemanticTagsDemo from '@/components/skills/demos/SemanticTagsDemo.vue'
 import FormsValidationDemo from '@/components/skills/demos/FormsValidationDemo.vue'
 import AccessibilityDemo from '@/components/skills/demos/accessibility/AccessibilityDemo.vue'
 import PseudoElementsDemo from '@/components/skills/demos/PseudoElementsDemo.vue'
+import AnimationsDemo from '@/components/skills/demos/AnimationsDemo.vue'
 
 // 定義組件接收的 props，期望接收一個包含技能數據的 Object
 const props = defineProps({
