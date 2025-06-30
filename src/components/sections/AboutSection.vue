@@ -6,7 +6,7 @@
       <div class="about-content">
         <!-- 個人照片區塊 -->
         <div class="about-photo">
-          <img src="https://via.placeholder.com/400x400?text=Your+Photo" alt="A professional photo of the developer">
+          <img src="/head.jpg" alt="A professional photo of the developer">
         </div>
         <!-- 個人文字介紹區塊 -->
         <div class="about-text">
