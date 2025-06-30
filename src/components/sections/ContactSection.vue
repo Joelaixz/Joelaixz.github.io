@@ -15,7 +15,7 @@
         <div class="step-card">
           <h3>下載數位版履歷</h3>
           <p>需要一份數位 PDF 版本以便存檔或上傳至您的系統嗎？</p>
-          <a href="/your-resume.pdf" download class="btn-primary">下載我的履歷 (PDF)</a>
+          <a href="/MyResume.pdf" download class="btn-primary">下載我的履歷 (PDF)</a>
         </div>
 
         <!-- 欄位三：檢視我的程式碼 -->

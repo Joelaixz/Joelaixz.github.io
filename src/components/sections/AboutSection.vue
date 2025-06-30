@@ -99,4 +99,31 @@
 .social-links a:hover {
   transform: scale(1.1); /* 懸停時放大 */
 }
+
+/* RWD 調整 */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* 在小螢幕上垂直堆疊 */
+    text-align: center; /* 文字居中 */
+    gap: 2rem; /* 調整間距 */
+  }
+
+  .about-photo {
+    margin-bottom: 1.5rem; /* 照片下方增加間距 */
+  }
+
+  .about-photo img {
+    width: 200px; /* 調整圖片大小 */
+    height: 200px; /* 調整圖片大小 */
+  }
+
+  .about-text h2 {
+    font-size: 2rem; /* 調整標題字體大小 */
+  }
+
+  .about-text p {
+    font-size: 1rem; /* 調整段落字體大小 */
+    text-indent: 0; /* 移除縮排 */
+  }
+}
 </style>

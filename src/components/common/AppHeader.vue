@@ -5,13 +5,15 @@
     <div class="logo">
       <router-link to="/">Joel</router-link>
     </div>
+
     <!-- 主要導覽連結，在技能頁面時隱藏 -->
     <nav class="nav-links" v-if="!isSkillsPage">
       <router-link to="/#about">關於我</router-link>
       <router-link to="/#skills">技能</router-link>
       <router-link to="/#contact">聯絡我</router-link>
     </nav>
-    <!-- 控制項區域，包含主題切換按鈕 -->
+
+    <!-- 控制項區域，包含主題切換按鈕和 GitHub 連結 -->
     <div class="controls">
       <!-- 主題切換按鈕，根據當前主題顯示不同文字和樣式 -->
       <button @click="toggleTheme" class="theme-toggle-button" :class="currentTheme">
@@ -23,7 +25,18 @@
       <a href="https://github.com/Joelaixz/Joelaixz.github.io" target="_blank" rel="noopener noreferrer" class="github-link">
         <font-awesome-icon :icon="['fab', 'github']" class="github-icon" />
       </a>
+      <!-- 漢堡選單按鈕，僅在小螢幕顯示 -->
+      <button class="hamburger-menu" @click="toggleMobileMenu" v-if="!isSkillsPage">
+        <font-awesome-icon :icon="['fas', 'bars']" />
+      </button>
     </div>
+
+    <!-- 行動版導覽選單，根據 showMobileMenu 狀態顯示/隱藏 -->
+    <nav class="mobile-nav-links" :class="{ 'is-active': showMobileMenu }" v-if="!isSkillsPage">
+      <router-link to="/#about" @click="toggleMobileMenu">關於我</router-link>
+      <router-link to="/#skills" @click="toggleMobileMenu">技能</router-link>
+      <router-link to="/#contact" @click="toggleMobileMenu">聯絡我</router-link>
+    </nav>
   </header>
 </template>
 
@@ -45,6 +58,8 @@ const props = defineProps({
 const themes = ['dark', 'cyberpunk', 'light'];
 // 響應式變數，用於儲存當前主題，預設為 'dark'
 const currentTheme = ref('dark');
+// 響應式變數，用於控制行動版選單的顯示/隱藏
+const showMobileMenu = ref(false);
 
 // 切換主題的函數
 const toggleTheme = () => {
@@ -60,6 +75,11 @@ const toggleTheme = () => {
   localStorage.setItem('theme', nextTheme);
   // 更新 currentTheme 響應式變數
   currentTheme.value = nextTheme;
+};
+
+// 切換行動版選單顯示/隱藏的函數
+const toggleMobileMenu = () => {
+  showMobileMenu.value = !showMobileMenu.value;
 };
 
 // 組件掛載後執行，用於初始化主題
@@ -196,5 +216,73 @@ onMounted(() => {
   width: 28px; /* 設定圖示寬度 */
   height: 28px; /* 設定圖示高度 */
   /* Font Awesome 圖示顏色由 color 屬性控制 */
+}
+
+/* 漢堡選單按鈕樣式 */
+.hamburger-menu {
+  display: none; /* 預設隱藏 */
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* 行動版導覽選單樣式 */
+.mobile-nav-links {
+  display: none; /* 預設隱藏 */
+  position: absolute;
+  top: var(--header-height); /* 位於頁首下方 */
+  left: 0;
+  width: 100%;
+  background-color: var(--header-bg-color);
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.mobile-nav-links.is-active {
+  display: flex; /* 啟用時顯示 */
+}
+
+.mobile-nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.8rem 0;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+}
+
+/* RWD 調整 */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* 在小螢幕上隱藏桌面版導覽連結 */
+  }
+
+  .hamburger-menu {
+    display: block; /* 在小螢幕上顯示漢堡選單按鈕 */
+  }
+
+  .sticky-header {
+    justify-content: space-between; /* 調整頁首內容分佈 */
+  }
+
+  .skills-page-header {
+    justify-content: center; /* 技能頁面時 Logo 仍然置中 */
+  }
+
+  .logo {
+    flex-grow: 0; /* 恢復 Logo 的 flex-grow */
+    text-align: left; /* Logo 靠左對齊 */
+  }
 }
 </style>
